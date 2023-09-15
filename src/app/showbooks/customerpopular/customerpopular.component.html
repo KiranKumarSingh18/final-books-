@@ -1,0 +1,129 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+        <style>
+            /* Custom Book Styles */
+            .book-container {
+                  display: flex;
+                  flex-wrap: wrap;
+                  justify-content: space-between;
+              }
+      
+       
+      
+              .book {
+                  width: 19%;
+                  margin-bottom: 20px;
+                  border: 1px solid #ddd;
+                  padding: 10px;
+                  text-align: center;
+              }
+      
+       
+      
+              .book-image {
+                  max-width: 100px;
+                  max-height: 150px;
+                  margin: 0 auto 10px;
+              }
+      
+       
+      
+              .book-title {
+                  font-weight: bold;
+              }
+      
+       
+      
+              .book-price {
+                  color: #007bff;
+              }
+      
+       
+      
+              .add-to-cart-button {
+                  background-color: #007bff;
+                  color: #fff;
+                  border: none;
+                  padding: 5px 10px;
+                  cursor: pointer;
+              }
+          </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" ><h2>Universal Book Store</h2></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="books">All Books</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link " aria-current="page" href="mycart">Cart</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="myorders" tabindex="-1" aria-current="true">My Orders</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="customer-popular" tabindex="-1" aria-current="true">Popular Books</a>
+              </li>
+              <!-- <form class="d-flex">
+                <button class="btn btn-outline-success" type="submit" (click)="logOut()">Log Out</button>
+              </form> -->
+            </ul>
+            <form class="d-flex">
+
+              <button class="btn btn-outline-success" type="submit" (click)="logOut()">Log Out</button>
+            </form>
+          </div>
+        </div>
+      </nav>  
+
+
+
+    <div class="container"><br>
+        <h2 align="center">Top Selling Books..!!</h2><br>
+
+
+
+        <!-- Display Books for a Category -->
+        <div class="book-container">
+            <!-- Book 1 -->
+            <!-- <img src="https://th.bing.com/th/id/OIP.LWX54UcVA8GUFTFtzr6KdwHaLM?w=203&h=307&c=7&r=0&o=5&pid=1.7" alt="Book 1"
+                    class="book-image"><br> -->
+            <div class="book" *ngFor="let b of books" >
+                <img src="{{b.bookId.link}}" alt="Book 1"
+                    class="book-image"><br>
+                <span class="book-title">Title: {{b.bookId.title}}</span><br>
+                <span class="book-author">Author: {{b.bookId.authorId.authorName}}</span><br>
+                <span class="book-publisher">Publisher: {{b.bookId.publisherId.publisherName}}</span><br>
+                <span class="book-category">Category: {{b.bookId.category}}</span><br>
+                <span class="book-price">Price: ₹{{b.bookId.price}}</span><br>
+                <button class="add-to-cart-button" (click)="addTocart(b.title,b.bookID,b.price)">Add to Cart</button>
+            </div>
+
+        </div><br>
+        <!-- <h3 align="center">Many Choices....!! Choose Wisely...!!</h3> -->
+    </div><br>
+
+
+
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+
+</html>

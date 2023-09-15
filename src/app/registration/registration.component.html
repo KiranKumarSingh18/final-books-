@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Page</title>
+    <!-- Include Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card bg-dark text-white">
+                    <div class="card-header" align="center"><h1>User Registration</h1></div>
+                    <div class="card-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" #txt1 placeholder="Enter your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" #txt2 placeholder="Enter your email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password"  #txt3 placeholder="Enter your password" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="mobile">Mobile Number</label>
+                                <input type="tel" class="form-control" id="mobile" #txt4 placeholder="Enter your mobile number" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender">Gender</label>
+                                <select class="form-control" id="gender" (change)="onSelect($event)"  required>
+                                    <option value="" ></option>
+                                    <option value="M">Male</option>
+                                    <option value="F">Female</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">Address</label>
+                                <textarea class="form-control" id="address" #txt6 placeholder="Enter your address" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block" (click)="onsubmit(txt1.value,txt2.value,txt3.value,txt4.value,txt6.value)" >Register</button>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <p class="text-center">Already a user? <a href="login">Login Here</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+<!-- 
+<form action=""  method="post">
+
+    <label for="user">Username</label>
+    <input id="user" type="text" name="name" #txt1 placeholder="name"><br>
+
+    <label for="email">Email</label>
+    <input id="email" type="text" name="email" #txt2 placeholder="email"><br>
+
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password" #txt3  placeholder="password"><br>
+
+    <label for="mobile">MobileNumber</label>
+    <input id="mobile" type="number" name="mobile" #txt4 placeholder="mobile"><br>
+
+    <label for="gender">Gender</label>
+    <input id="gender" type="text" name="gender" #txt5 placeholder="M/F"><br>
+
+    <label for="address">Address</label>
+    <input id="address" type="text" name="address" #txt6 placeholder="address"><br>
+
+    <input type="submit" value="submit" (click)="onsubmit(txt1.value,txt2.value,txt3.value,txt4.value,txt5.value,txt6.value)">
+
+
+</form> -->
