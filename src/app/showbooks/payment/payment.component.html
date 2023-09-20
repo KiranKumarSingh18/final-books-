@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<html>
+
+<style>
+    .card {
+
+        margin-top: 30px;
+
+        border: none;
+
+        max-width: 500px;
+
+        padding: 90px;
+
+        position: absolute;
+
+        top: 50%;
+
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+
+        background-color: #FFFAF1;
+
+
+
+        border-style: outset;
+
+        background-size: 20px;
+
+        font-size: x-large;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+    h1,
+    h5 {
+
+        font-size: xx-large;
+
+        color: black;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+    label {
+
+        color: black;
+
+    }
+
+    button {
+
+        background-color: rgb(221, 215, 215);
+
+        color: #080000;
+
+        padding: 10px 20px;
+
+        border: none;
+
+        border-radius: 4px;
+
+        cursor: pointer;
+
+        size: 20px;
+
+    }
+
+    input[type=text],
+    [type=password] {
+
+        width: 100%;
+
+        padding: 12px 20px;
+
+        margin: 8px 0;
+
+        box-sizing: border-box;
+
+        font-size: large;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+    button:hover {
+
+        background-color: #dae6da;
+
+    }
+
+    p {
+
+        color: rgb(7, 7, 7);
+
+    }
+</style>
+
+<body>
+
+
+
+
+
+
+
+    <div class="container">
+
+        <div class="row justify-content-center">
+
+            <div class="col">
+
+                <div class="card">
+
+                    <div class="text">
+
+                        <h1>Payment Details</h1>
+
+
+
+                    </div>
+
+                    <form>
+
+                        <div class="mb-3">
+
+
+                            <label for="payment" class="form-label">Payment Id :{{paymentList.paymentId}}
+                                </label><br><br>
+                                
+                            <label for="payment" class="form-label">Sub total :
+                                Rs.{{paymentList.cartValue}}</label><br><br>
+
+                            <label for="payment"class="form-label">Discount      : Rs.{{paymentList.discount}}</label><br><br>
+
+                            --------------------------<br><br>
+
+                            <label for="payment" class="form-label">Total :
+                                Rs.{{paymentList.totalAmount}}</label><br><br>
+
+                            <button type="ok" class="btn btn-primary" (click)="orders()">ok</button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+</body>
+
+</html>
