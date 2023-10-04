@@ -23,7 +23,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="admin-dashboard">Add Book</a>
+            <a class="nav-link active" aria-current="page" href="admin-dashboard">Manage Books</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="inventory">Inventory</a>
@@ -70,8 +70,26 @@
         <input type="number" class="form-control" id="price" #price required>
       </div>
       <button type="submit" class="btn btn-primary"
-        (click)="addBook(authorId.value,publisherId.value,title.value,category.value,link.value,price.value)">Add
-        Book</button>
+        (click)="addBook(authorId.value,publisherId.value,title.value,category.value,link.value,price.value)">Add Book</button>
+    </form>
+  </div>
+
+
+
+  <div class="container mt-5">
+    <h2>Update Book</h2>
+    <form>
+      <div class="form-group">
+        <label for="bookId">Book ID</label>
+        <input type="text" class="form-control" id="bookId" #bookId required>
+      </div>
+      <div class="form-group">
+        <label for="quantity">Quantity</label>
+        <input type="text" class="form-control" id="quantity" #quantity required>
+      </div>
+      
+      <button type="submit" class="btn btn-primary"
+        (click)="updateBook(bookId.value,quantity.value)">Update Quantity</button>
     </form>
   </div>
 

@@ -54,6 +54,18 @@ export class AdminService {
     return this.httpClient.post(url,data);
   }
 
+  public updateBook(bookId:number,quantity:number):Observable<any>
+  {
+
+    const url = 'http://localhost:8087/inventory/updateinventory/'+bookId+'/'+quantity;
+    const options = {
+      withCredentials: true
+    };
+
+    return this.httpClient.get(url,options);
+  }
+
+
 
   public showInventory() : Observable<any>
   {
